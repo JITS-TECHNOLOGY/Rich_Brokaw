@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found · Richard Brokaw</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap">
+<style>
+  :root { --navy: #1F2A44; --gold: #B8893B; --on-dark: #D9DCE3; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--navy); color: var(--on-dark); font: 18px/1.6 Lato, "Helvetica Neue", Arial, sans-serif;
+    display: grid; place-items: center; text-align: center; padding: 24px max(16px, env(safe-area-inset-left, 0px)); }
+  .box { max-width: 560px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .eyebrow { font: 700 13px/1.4 Lato, Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin: 0; }
+  h1 { font: 700 clamp(30px, 6vw, 44px)/1.15 "Playfair Display", Georgia, serif; color: #fff; margin: 0; }
+  hr { width: 80px; height: 2px; border: 0; background: var(--gold); margin: 4px 0; }
+  p { margin: 0; }
+  .row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 8px; }
+  a.btn { display: inline-block; font: 700 14px/1 Lato, Arial, sans-serif; letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+    padding: 16px 28px; border: 2px solid var(--gold); background: var(--gold); color: #fff; border-radius: 2px; }
+  a.btn.ghost { background: transparent; border-color: #fff; }
+  a.btn:focus-visible { outline: 3px solid #D4AE6B; outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <p class="eyebrow">Richard Brokaw</p>
+    <h1>We couldn't find that page</h1>
+    <hr>
+    <p>The page may have moved. These will get you back on track.</p>
+    <div class="row">
+      <a class="btn" id="home" href="/">Go to the Homepage</a>
+      <a class="btn ghost" id="fr" href="/free_resources/">Free Resources</a>
+    </div>
+  </div>
+<script>
+  // works both at github.io/<repo>/ and on a custom domain
+  (function () {
+    var m = location.pathname.match(/^\/[^/]+\//);
+    var host = location.hostname.endsWith('github.io');
+    var base = host && m ? m[0] : '/';
+    document.getElementById('home').href = base;
+    document.getElementById('fr').href = base + 'free_resources/';
+  })();
+</script>
+</body>
+</html>
