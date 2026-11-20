@@ -396,3 +396,22 @@ nav ul a[aria-current="page"] { color: var(--gold); }
   .serve .ph-a { grid-row: auto; }
   .serve .ph-a img { aspect-ratio: 3 / 4; flex: none; max-height: 560px; }
 }
+
+/* Serving Together: grow + one gold pulse on hover */
+.serve figure { position: relative; }
+.serve img { transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease; outline: 2px solid transparent; outline-offset: 0; will-change: transform; }
+@media (hover: hover) {
+  .serve figure:hover { z-index: 2; }
+  .serve figure:hover img { transform: translateY(-4px) scale(1.035); box-shadow: 0 26px 44px -16px rgba(31,42,68,.55); animation: serve-pulse .9s ease-out 1; }
+}
+@media (hover: none) {
+  .serve figure:active img { transform: scale(1.025); transition-duration: .2s; }
+}
+@keyframes serve-pulse {
+  0%   { outline-color: rgba(184,137,59,.85); outline-offset: 0; }
+  100% { outline-color: rgba(184,137,59,0);   outline-offset: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .serve img, .serve figure:hover img, .serve figure:active img { transition: none; animation: none; transform: none; }
+  .serve figure:hover img { box-shadow: 0 0 0 3px rgba(184,137,59,.7), 0 14px 30px -14px rgba(31,42,68,.45); }
+}
