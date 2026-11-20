@@ -123,6 +123,8 @@ nav .btn { padding: 11px 18px; font-size: 12px; white-space: nowrap; }
 .soon .eyebrow { color: var(--navy); }
 .soon p { color: var(--muted); font-size: 16px; }
 .soon a { color: var(--gold); font-weight: 700; }
+.soon a.btn { color: var(--white); margin-top: 6px; }
+.soon a.btn:hover { color: var(--white); }
 
 /* resources */
 .res { background: var(--cream); }

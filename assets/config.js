@@ -26,6 +26,6 @@ window.SITE_CONFIG = {
   /* Amazon product pages. Leave "" to keep the current fallback. */
   amazon: {
     myLetterToYou: "",          // e.g. "https://www.amazon.com/dp/XXXXXXXXXX"
-    whyTheRaptureTarries: ""    // fill in at launch
+    whyTheRaptureTarries: "https://www.amazon.com/dp/B0HN59XS78"
   }
 };
